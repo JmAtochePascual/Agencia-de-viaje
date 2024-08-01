@@ -1,0 +1,7 @@
+extends ./layout/index
+
+block contenido
+  main(class="w-11/12 max-w-screen-xl mx-auto")
+    h1(class="mb-12 text-4xl text-center font-bold uppercase text-sky-700 md:text-5xl lg:text-6xl")= pagina
+
+    p= JSON.stringify(viajes)

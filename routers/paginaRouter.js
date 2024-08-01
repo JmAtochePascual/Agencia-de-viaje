@@ -3,6 +3,7 @@ import express from 'express';
 import {
   paginaInicio,
   paginaNosotros,
+  paginaViajes,
 } from '../controllers/paginaController.js';
 
 
@@ -14,6 +15,9 @@ router.get('/', paginaInicio);
 
 // Nosotros
 router.get('/nosotros', paginaNosotros);
+
+// Viajes
+router.get('/viajes', paginaViajes);
 
 
 

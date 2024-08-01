@@ -1,6 +1,6 @@
 // Importaciones
 import { DataTypes } from "sequelize";
-import db from "../config/db";
+import db from "../config/db.js";
 
 // Crear modelo Viaje
 const Viaje = db.define('viaje', {
