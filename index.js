@@ -5,10 +5,12 @@ import db from './config/db.js';
 
 try {
   await db.authenticate();
+  db.sync();
   console.log('Conexión establecida correctamente.');
 } catch (error) {
   console.log(error);
 }
+
 // Instanciar express
 const app = express();
 
