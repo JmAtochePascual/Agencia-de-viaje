@@ -13,15 +13,15 @@ block contenido
 
       div(class="mb-4")
         label(class="block font-bold mb-2 text-gray-500") Nombre
-        input(type="text" name="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") 
+        input(type="text" name="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value= testimonio ? testimonio.nombre : "") 
       
       div(class="mb-4")
         label(class="block font-bold mb-2 text-gray-500") Email
-        input(type="correo" name="correo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+        input(type="correo" name="correo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value= testimonio ? testimonio.correo : "")
 
       div(class="mb-4")
         label(class="block font-bold mb-2 text-gray-500") Mensaje
-        textarea(name="mensaje" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+        textarea(name="mensaje" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="6")= testimonio ? testimonio.mensaje : ""
       
       input(type="submit" value="Enviar" class="w-full bg-sky-800 hover:bg-sky-900 text-white font-bold py-4 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer")
 

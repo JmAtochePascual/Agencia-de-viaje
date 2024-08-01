@@ -84,11 +84,13 @@ const registrarTestomial = async (req, res) => {
   try {
     // Obtener testimoniales de la base de datos
     const testimoniales = await Testimonial.findAll();
+    const testimonio = { nombre, correo, mensaje };
 
     if (error) {
       return res.render('testimoniales', {
         pagina: 'Testimoniales',
         testimoniales,
+        testimonio,
         error: 'Todos los campos son obligatorios',
       });
     }
