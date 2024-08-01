@@ -2,7 +2,11 @@
 export default {
   content: ['./views/**/*.pug'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero': "url('/img/superior.jpg')",
+      }
+    },
   },
   plugins: [],
 }

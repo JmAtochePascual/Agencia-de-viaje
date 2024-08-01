@@ -5,10 +5,21 @@ import Viaje from "../models/Viaje.js";
 
 
 // Pagina inicio
-const paginaInicio = (req, res) => {
-  res.render('inicio', {
-    pagina: 'Inicio',
-  });
+const paginaInicio = async (req, res) => {
+
+  try {
+    // Obteber 3 viajes de la base de datos
+    const viajes = await Viaje.findAll({ limit: 3 });
+
+    res.render('inicio', {
+      pagina: 'Inicio',
+      clase: 'body',
+      viajes,
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // Pagina nosotros

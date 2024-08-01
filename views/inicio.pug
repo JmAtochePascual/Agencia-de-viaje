@@ -1,4 +1,21 @@
 extends ./layout/index
 
 block contenido 
-	h1(class="text-center text-6xl text-red-600") Inicio
+	section(class="hero mb-12 bg-hero bg-cover flex justify-center items-center")
+		h1(class="mb-12 text-4xl text-center font-bold uppercase text-white md:text-5xl lg:text-6xl opacity-50") Aventura
+
+	main(class="w-11/12 max-w-screen-xl mx-auto")
+		h2(class="mb-12 text-2xl text-center font-bold uppercase text-sky-700 md:text-4xl") Sobre Nosotros
+
+		section( class="mb-10 grid gap-8 md:grid-cols-2 lg:mb-24")
+			div 
+				p(class="mb-4 text-justify") Dundada en 1900, Agencia de Viaje nació con la misión de hacer que los sueños de viaje de nuestros clientes se hagan realidad. Desde nuestros humildes comienzos, hemos crecido hasta convertirnos en una de las agencias de viajes más respetadas y confiables de la región, gracias a nuestra dedicación y compromiso con la excelencia.
+
+				p(class="mb-4 text-justify") En Agencia de Viaje, nuestra misión es proporcionar experiencias de viaje únicas e inolvidables. Nos esforzamos por ofrecer un servicio personalizado, adaptado a las necesidades y deseos individuales de cada uno de nuestros clientes. Creemos que cada viaje debe ser una aventura única, llena de momentos especiales que serán recordados para siempre.
+
+				p(class="mb-4 text-justify") Entendemos que cada viajero es único. Por eso, ofrecemos servicios personalizados para satisfacer tus necesidades y preferencias. Nuestro equipo de expertos está aquí para asistirte en cada paso del camino, asegurando que tu viaje sea tan especial como lo imaginaste. Aprovecha nuestros paquetes turísticos exclusivos diseñados para ofrecerte la mejor experiencia al mejor precio. Ya sea que viajes solo, en pareja, con familia o en grupo, tenemos la oferta perfecta para ti.
+
+			div 
+				img(src="/img/inicio_nosotros.jpg", alt="imagen inicio nosotros" class="object-cover w-full")
+		
+		include ./layout/bloque_viaje

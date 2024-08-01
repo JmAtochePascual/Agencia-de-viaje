@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.body {
+  position: relative;
+}
+
+.body header {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  top: 0;
+}
+
+.body .hero {
+  height: 700px;
+}

@@ -5,7 +5,8 @@ html(lang="es")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="/css/styles.css")
     title Agencia de Viajes | #{pagina}
-  body(class="min-h-screen bg-gray-200")
+  body(class=`min-h-screen bg-gray-200 ${clase}`)
+  
     include ./header
     
     block contenido
