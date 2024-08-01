@@ -1,15 +1,20 @@
 // Importar dependencias
 import express from 'express';
 import {
-  paginaInicio
+  paginaInicio,
+  paginaNosotros,
 } from '../controllers/paginaController.js';
 
 
 // Importar router
 const router = express.Router();
 
-// Rutas
+// Inicio
 router.get('/', paginaInicio);
+
+// Nosotros
+router.get('/nosotros', paginaNosotros);
+
 
 
 // Exportar router
