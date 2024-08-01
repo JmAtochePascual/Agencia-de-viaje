@@ -12,6 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 // Habilitar carpeta public
 app.use(express.static('public'));
 
+// Obtener fecha actual
+app.use((req, res, next) => {
+  const fecha = new Date();
+  res.locals.fechaActual = fecha.getFullYear();
+  next();
+});
+
 // Habilitar template engine pug
 app.set('view engine', 'pug');
 app.set('views', './views');
