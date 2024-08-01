@@ -1,8 +1,14 @@
 // Importar dependencias
 import express from 'express';
 import routerPagina from './routers/paginaRouter.js';
+import db from './config/db.js';
 
-
+try {
+  await db.authenticate();
+  console.log('Conexión establecida correctamente.');
+} catch (error) {
+  console.log(error);
+}
 // Instanciar express
 const app = express();
 
