@@ -550,6 +550,15 @@ video {
 .max-w-screen-xl {
   max-width: 1280px;
 }
+.max-w-screen-sm {
+  max-width: 640px;
+}
+.max-w-2xl {
+  max-width: 42rem;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
 .grid-flow-dense {
   grid-auto-flow: dense;
 }
