@@ -8,17 +8,14 @@ import Viaje from "../models/Viaje.js";
 const paginaInicio = async (req, res) => {
 
   try {
-    // Obteber 3 viajes de la base de datos
-    const viajes = await Viaje.findAll({ limit: 3 });
-
-    // Obtener 3 testimoniales de la base de datos
-    const testimoniales = await Testimonial.findAll({ limit: 3 });
+    // consultar 3 viajes y 3 testimoniales de la base de datos
+    const resultados = await Promise.all([Viaje.findAll({ limit: 3 }), Testimonial.findAll({ limit: 3 })]);
 
     res.render('inicio', {
       pagina: 'Inicio',
       clase: 'body',
-      viajes,
-      testimoniales
+      viajes: resultados[0], // Viajes
+      testimoniales: resultados[1], // Testimoniales
     });
 
   } catch (error) {
