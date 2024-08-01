@@ -73,8 +73,7 @@ const paginaTestomoniales = async (req, res) => {
   }
 };
 
-
-// Resgistrar testimonio
+// Resgistrar testomonial
 const registrarTestomial = async (req, res) => {
   // Validar formulario
   const { nombre, correo, mensaje } = req.body;
@@ -96,8 +95,21 @@ const registrarTestomial = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-};
 
+  // Registrar testimonio en la base de datos
+  try {
+    await Testimonial.create({
+      nombre,
+      correo,
+      mensaje,
+    });
+
+    res.redirect('/testimoniales');
+
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 
 
