@@ -4,9 +4,28 @@ block contenido
   main(class="w-11/12 max-w-screen-xl mx-auto")
     h1(class="mb-12 text-4xl text-center font-bold uppercase text-sky-700 md:text-5xl lg:text-6xl")= pagina
 
+    form(action="" method="POST" class="max-w-2xl mx-auto mb-20 px-4 py-8 bg-white shadow-md rounded-md md:px-8 md:py-12")
+      h2(class=" mb-4 text-2xl text-center uppercase font-bold text-sky-600 md:text-3xl lg:text-4xl") Deja tu testimonio
+
+      div(class="mb-4")
+        label(class="block font-bold mb-2 text-gray-500") Nombre
+        input(type="text" name="nombre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") 
+      
+      div(class="mb-4")
+        label(class="block font-bold mb-2 text-gray-500") Email
+        input(type="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+
+      div(class="mb-4")
+        label(class="block font-bold mb-2 text-gray-500") Mensaje
+        textarea(name="mensaje" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline")
+      
+      input(type="submit" value="Enviar" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer")
+
     section(class="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3")
       each testominial in testimoniales
         div(class="relative p-8 border rounded-md  shadow-xl bg-white hover:scale-105 transform transition duration-500 ease-in-out")
           p(class="mb-8 text-center uppercase font-semibold text-gray-700") #{testominial.mensaje.substr(0, 100)}...
           p(class="text-end text-rose-600 font-bold") --#{testominial.nombre}
           p(class="absolute top-4 left-4 text-end text-6xl text-gray-700 font-bold opacity-50") "
+      
+    
