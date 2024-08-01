@@ -62,10 +62,11 @@ const paginaTestomoniales = async (req, res) => {
     // Obtener testimoniales de la base de datos
     const testimoniales = await Testimonial.findAll();
 
-    res.json({
+    res.render('testimoniales', {
       pagina: 'Testimoniales',
       testimoniales,
     });
+
   } catch (error) {
     console.log(error);
   }
