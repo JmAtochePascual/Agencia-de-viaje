@@ -11,10 +11,14 @@ const paginaInicio = async (req, res) => {
     // Obteber 3 viajes de la base de datos
     const viajes = await Viaje.findAll({ limit: 3 });
 
+    // Obtener 3 testimoniales de la base de datos
+    const testimoniales = await Testimonial.findAll({ limit: 3 });
+
     res.render('inicio', {
       pagina: 'Inicio',
       clase: 'body',
       viajes,
+      testimoniales
     });
 
   } catch (error) {
