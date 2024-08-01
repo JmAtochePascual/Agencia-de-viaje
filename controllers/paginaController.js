@@ -1,3 +1,4 @@
+import { render } from "pug";
 import Testimonial from "../models/Testomonial.js";
 import Viaje from "../models/Viaje.js";
 
@@ -73,6 +74,32 @@ const paginaTestomoniales = async (req, res) => {
 };
 
 
+// Resgistrar testimonio
+const registrarTestomial = async (req, res) => {
+  // Validar formulario
+  const { nombre, correo, mensaje } = req.body;
+
+  // Validar formulario
+  const error = [nombre, correo, mensaje].some((valor) => valor.trim() === '');
+
+  try {
+    // Obtener testimoniales de la base de datos
+    const testimoniales = await Testimonial.findAll();
+
+    if (error) {
+      return res.render('testimoniales', {
+        pagina: 'Testimoniales',
+        testimoniales,
+        error: 'Todos los campos son obligatorios',
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
 
 export {
   paginaInicio,
@@ -80,4 +107,5 @@ export {
   paginaViajes,
   paginaViaje,
   paginaTestomoniales,
+  registrarTestomial
 }

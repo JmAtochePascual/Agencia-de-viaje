@@ -6,6 +6,7 @@ import {
   paginaTestomoniales,
   paginaViaje,
   paginaViajes,
+  registrarTestomial,
 } from '../controllers/paginaController.js';
 
 
@@ -27,6 +28,7 @@ router.get('/viajes/:slug', paginaViaje);
 
 // Testomoniales
 router.get('/testimoniales', paginaTestomoniales);
+router.post('/testimoniales', registrarTestomial);
 
 
 
