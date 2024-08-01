@@ -4,4 +4,43 @@ block contenido
   main(class="w-11/12 max-w-screen-xl mx-auto")
     h1(class="mb-12 text-4xl text-center font-bold uppercase text-sky-700 md:text-5xl lg:text-6xl")= pagina
 
-    p= JSON.stringify(viajes)
+    section(class="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3")
+      each viaje in viajes
+        article(class="bg-white shadow-2xl rounded-lg overflow-hidden")
+          img(class="w-full object-cover object-center hover:scale-105 transition-transform duration-500 ease-in-out" src=`/img/destinos_${viaje.imagen}.jpg` alt=viaje.titulo)
+
+          div(class="p-4")
+            h3(class="mb-2 text-2xl font-bold uppercase text-sky-700")= viaje.titulo
+
+            div(class="flex gap-1")
+              svg.icon.icon-tabler.icon-tabler-calendar-month(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                path(d='M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z')
+                path(d='M16 3v4')
+                path(d='M8 3v4')
+                path(d='M4 11h16')
+                path(d='M7 14h.013')
+                path(d='M10.01 14h.005')
+                path(d='M13.01 14h.005')
+                path(d='M16.015 14h.005')
+                path(d='M13.015 17h.005')
+                path(d='M7.01 17h.005')
+                path(d='M10.01 17h.005')
+
+              p(class="mb-2 font-semibold text-gray-700") Fecha:
+                time(class="text-sm font-normal text-sky-600")   #{viaje.fecha_ida} / #{viaje.fecha_vuelta}
+
+            div(class="flex gap-1")
+              svg.icon.icon-tabler.icon-tabler-users(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                path(d='M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0')
+                path(d='M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+                path(d='M16 3.13a4 4 0 0 1 0 7.75')
+                path(d='M21 21v-2a4 4 0 0 0 -3 -3.85')
+
+              p(class="mb-2 font-semibold text-gray-700") Disponibles: 
+                time(class="text-sm font-normal text-sky-600")= viaje.disponibles
+
+            p(class="mb-4 text-gray-600")= JSON.stringify(viaje.descripcion.substring(0, 100))
+
+            a(href=`/viajes/${viaje.slug}`, class="mb-4 block font-bold py-2 px-4 uppercase text-center rounded-md bg-rose-600 hover:bg-rose-700 text-white") Más información
