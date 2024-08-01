@@ -32,8 +32,28 @@ const paginaViajes = async (req, res) => {
 
 };
 
+// Pagina viaje
+const paginaViaje = async (req, res) => {
+  // Obtener el slug de la URL
+  const { slug } = req.params;
+
+  try {
+    // Obtener viaje de la base de datos
+    const viaje = await Viaje.findOne({ where: { slug } });
+
+    res.render('viaje', {
+      pagina: 'Informacion Viaje',
+      viaje,
+    });
+
+  } catch (error) {
+    console.log(error);
+  }
+
+};
 export {
   paginaInicio,
   paginaNosotros,
   paginaViajes,
+  paginaViaje,
 }
