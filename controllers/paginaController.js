@@ -1,4 +1,7 @@
+import Testimonial from "../models/Testomonial.js";
 import Viaje from "../models/Viaje.js";
+
+
 
 // Pagina inicio
 const paginaInicio = (req, res) => {
@@ -51,9 +54,29 @@ const paginaViaje = async (req, res) => {
   }
 
 };
+
+// Paginas Testomoniales
+const paginaTestomoniales = async (req, res) => {
+
+  try {
+    // Obtener testimoniales de la base de datos
+    const testimoniales = await Testimonial.findAll();
+
+    res.json({
+      pagina: 'Testimoniales',
+      testimoniales,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
 export {
   paginaInicio,
   paginaNosotros,
   paginaViajes,
   paginaViaje,
+  paginaTestomoniales,
 }
